@@ -1,6 +1,7 @@
 // Imports go first
 
 const {makePottery} = require("./PotteryWheel.js")
+const {firePottery} = require("./Kiln.js")
 
 
 //invoke makePottery() and provide values as arguments to necessary parameters
@@ -26,6 +27,17 @@ console.log(mug, smallBowl, bigBowl, vase, plate)
 
 // Fire each piece of pottery in the kiln
 
+firedMug = firePottery(mug, 2200)
+
+firedSmallBowl = firePottery(smallBowl, 2200)
+
+firedBigBowl = firePottery(bigBowl, 2500)
+
+firedVase = firePottery(vase, 2200)
+
+firedPlate = firePottery(plate, 2250)
+
+console.log(firedMug, firedSmallBowl, firedBigBowl, firedVase, firedPlate)
 
 // Determine which ones should be sold, and their price
 

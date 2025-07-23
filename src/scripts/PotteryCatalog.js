@@ -2,7 +2,7 @@ let potteryToSell = [];
 
 //toSellOrNotToSell will determine if a piece should be sold
 //must accept pottery potteryObject as input
-const toSellOrNotToSell = (potteryObject) => {
+export const toSellOrNotToSell = (potteryObject) => {
 //if piece weight is >= 6, function must add price property with value of 40
         if (potteryObject.weight >= 6) {
             potteryObject.price = 40
@@ -25,12 +25,12 @@ const toSellOrNotToSell = (potteryObject) => {
 
 }
 //define and export function named usePottery to return copy of the array of items to be sold. Use global js function to create deep copy
-const usePottery = () => {
+export const usePottery = () => {
     return structuredClone(potteryToSell)
 }
 
 //invoke toSellOrNotToSell() in main.js for the 5 pottery items to check work
 
-module.exports = { toSellOrNotToSell, usePottery}
+
 
 //PUSH CODE TO GITHUB

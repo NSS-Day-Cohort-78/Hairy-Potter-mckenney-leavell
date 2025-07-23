@@ -4,11 +4,10 @@
 
 let id = 0
 
-const makePottery = (shape, weight, height) => {
+export const makePottery = (shape, weight, height) => {
 //return object with properties: `shape`, `weight`, `height`, id (increment value each time function is invoked)
         id++
         return {shape, weight, height, id}
 
 }
 
-module.exports = {makePottery}

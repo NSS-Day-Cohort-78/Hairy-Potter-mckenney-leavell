@@ -1,9 +1,14 @@
 // Imports go first
 
-const {makePottery} = require("./PotteryWheel.js")
-const {firePottery} = require("./Kiln.js")
-const {toSellOrNotToSell, usePottery} = require("./PotteryCatalog.js")
+// const {makePottery} = require("./PotteryWheel.js")
+// const {firePottery} = require("./Kiln.js")
+// const {toSellOrNotToSell, usePottery} = require("./PotteryCatalog.js")
+// const { PotteryList } = require("./PotteryList.js")
 
+import { makePottery } from './PotteryWheel.js'
+import { firePottery } from "./Kiln.js"
+import { toSellOrNotToSell, usePottery } from "./PotteryCatalog.js"
+import { PotteryList } from "./PotteryList.js"
 
 //invoke makePottery() and provide values as arguments to necessary parameters
 //store object returned into variable, then use console.log() to see object
@@ -13,30 +18,30 @@ const {toSellOrNotToSell, usePottery} = require("./PotteryCatalog.js")
 // console.log(pottery)
 
 // Make 5 pieces of pottery at the wheel
-let mug = makePottery("mug", 1, 4)
+let mug = makePottery("Mug", 1, 4)
 
-let smallBowl = makePottery("small bowl", 2, 4.5)
+let smallBowl = makePottery("Small bowl", 2, 4.5)
 
-let bigBowl = makePottery("big bowl", 6, 9)
+let bigBowl = makePottery("Big bowl", 6, 9)
 
-let vase = makePottery("vase", 6, 10)
+let vase = makePottery("Vase", 6, 10)
 
-let plate = makePottery("plate", 2, 1)
+let plate = makePottery("Plate", 2, 1)
 
 console.log(mug, smallBowl, bigBowl, vase, plate)
 
 
 // Fire each piece of pottery in the kiln
 
-firedMug = firePottery(mug, 2200)
+const firedMug = firePottery(mug, 2200)
 
-firedSmallBowl = firePottery(smallBowl, 2200)
+const firedSmallBowl = firePottery(smallBowl, 2200)
 
-firedBigBowl = firePottery(bigBowl, 2500)
+const firedBigBowl = firePottery(bigBowl, 2500)
 
-firedVase = firePottery(vase, 2200)
+const firedVase = firePottery(vase, 2200)
 
-firedPlate = firePottery(plate, 2250)
+const firedPlate = firePottery(plate, 2250)
 
 console.log(firedMug, firedSmallBowl, firedBigBowl, firedVase, firedPlate)
 
@@ -64,3 +69,13 @@ console.log(usablePottery)
 
 // Invoke the component function that renders the HTML list
 
+const potteryList = PotteryList(usablePottery)
+// const potteryContainer = document.getElementById("potteryList")
+
+const potteryContainer = document.getElementsByClassName("potteryList")[0];
+
+const renderHTMLToDom = (htmlToRender, whereToRender) => {
+    whereToRender.innerHTML = htmlToRender
+}
+
+renderHTMLToDom(potteryList, potteryContainer)

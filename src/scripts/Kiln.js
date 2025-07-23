@@ -5,7 +5,7 @@
 //adds property "cracked" to object--if temp is above 2200, cracked = true. Else "cracked" = false
 //after new properties are added, return augmented object
 
-const firePottery = (potteryObject, temperature) => {
+export const firePottery = (potteryObject, temperature) => {
 
     if (temperature > 2200) {
         potteryObject.firingTemperature = temperature
@@ -23,4 +23,3 @@ const firePottery = (potteryObject, temperature) => {
 
 }
 
-module.exports = { firePottery }
